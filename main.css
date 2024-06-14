@@ -1,0 +1,477 @@
+/*-----------------------------------*\
+  #main.css
+\*-----------------------------------*/
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+  /**
+   * colors
+   */
+  --white: #fff;
+  --background: #ebf0fa;
+  --background-input: #d7e2f6;
+  --background-button: #244c98;
+  --background-modal: #f0f4fc;
+  --font-any: #244c98;
+  --font-main: #1f4284;
+  --font-text: #727272;
+  --font-button: #fff;
+  --font-popup: #323232;
+  --btn-radius: 60px;
+  --section-radius: 10px;
+  --umber: #1b4186;
+
+  /**
+   * typography
+   */
+
+  --font-family: "Manrope", sans-serif;
+
+  --fw-400: 400;
+  --fw-500: 500;
+
+  /**
+   * box shadow
+   */
+
+  --shadow-1: 0px 0px 30px 0px hsla(0, 0%, 0%, 0.2);
+
+  /**
+   * transition
+   */
+
+  --transition-1: 0.25s ease;
+
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+img,
+span,
+button { display: block; }
+
+img { height: auto; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--font-text);
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+
+h2 {
+  color: var(--font-main);
+  font-family: var(--font-family);
+  font-weight: var(--fw-500);
+  line-height: 1.6;
+  font-size: 30px;
+}
+
+h3 {
+  color: var(--font-popup);
+  font-family: var(--font-family);
+  font-weight: var(--fw-500);
+  font-size: 24px;
+}
+
+.container {
+  max-width: 1920px;
+  width: 100%;
+  padding-inline: 36px 40px;
+}
+
+.main__section {
+  background-color: var(--background);
+  border-radius: var(--section-radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 36px;
+}
+
+.main__block {
+  max-width: 538px;
+  width: 100%;
+  padding-left: 72px;
+}
+
+.main__block--title {
+  margin-bottom: 18px;
+}
+
+.main__block--text {
+  font-weight: var(--fw-400);
+  color: var(--font-text);
+  margin-bottom: 36px;
+}
+
+.main__block--popup {
+  max-width: 341px;
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: var(--fw-400);
+  font-size: 18px;
+  background-color: var(--background-button);
+  color: var(--font-button);
+  display: flex;
+  align-items: center;
+  min-height: 68px;
+  padding-inline: 24px;
+  border-radius: var(--btn-radius);
+  transition: var(--transition-1);
+  position: relative;
+}
+
+.main__block--popup:is(:hover, :focus-visible) { background-color: var(--umber); }
+
+.main__block--popup::before {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  content: "";
+  width: 44px;
+  height: 44px;
+  background-image: url('/assets/images/arrow-up-right.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--white);
+  border-radius: 40px;
+  padding: 4px;
+  width: 44px;
+  height: 44px;
+}
+
+.main__image {
+  max-width: 910px;
+  min-height: 456px;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/back1920.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main__modal--overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 16px;
+  display: none;
+}
+
+.main__modal {
+  position: relative;
+  padding: 24px;
+  max-width: 500px;
+  width: 100%;
+  max-height: max-content;
+  background-color: var(--background-modal);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin: auto;
+  cursor: default;
+}
+
+.main__modal:hover {
+  box-shadow: var(--shadow-1);
+  transition: box-shadow var(--transition-1);
+}
+
+.main__modal--form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+
+.main__modal--title {
+  font-family: var(--font-family);
+  font-weight: var(--fw-500);
+  font-size: 24px;
+  margin-top: 54px;
+  margin-bottom: 18px;
+}
+
+.main__modal--close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  background-color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__modal--close svg {
+  stroke: black;
+}
+
+.main__modal--close svg:hover {
+  stroke: var(--font-any);
+}
+
+input:focus-visible {
+  outline: 1px solid var(--background-button);
+}
+input:focus-visible::placeholder {
+  opacity: 0.3;
+}
+
+.main__modal--input {
+  background-color: var(--background-input);
+  border-radius: 10px;
+  max-width: 450px;
+  width: 100%;
+  min-height: 73px;
+  height: 100%;
+  padding-left: 24px;
+}
+
+.main__modal--input::placeholder {
+  color: var(--font-main);
+  font-family: var(--font-family);
+  font-weight: var(--fw-500);
+  font-size: 18px;
+}
+
+#login {
+  margin-bottom: 4px;
+}
+
+#password {
+  margin-bottom: 24px;
+}
+
+.checkbox-label {
+  position: relative;
+  color: var(--font-popup);
+  font-family: var(--font-family);
+  font-weight: var(--fw-400);
+  font-size: 18px;
+  padding-left: 38px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url('/assets/images/Vector.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.checkbox-input::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: var(--font-main);
+  border-radius: 4px;
+  transform: scale(0);
+  transition: var(--transition-1);
+}
+
+#checkbox {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#checkbox:checked + .checkbox-input::before {
+  transform: scale(1);
+}
+
+.main__modal--link {
+  color: var(--font-any);
+  font-family: var(--font-family);
+  font-weight: var(--fw-500);
+  font-size: 20px;
+  margin-bottom: 36px;
+}
+
+.main__modal--link:hover {
+  color: #0b2454;
+}
+
+.main__modal--btn {
+  width: 100%;
+  border-radius: 4px;
+  padding: 18px 12px;
+  min-height: 65px;
+}
+
+.btn-log {
+  background-color: var(--background-button);
+  color: var(--white);
+  font-family: var(--font-family);
+  font-weight: var(--fw-500);
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.btn-log:hover {
+  box-shadow: var(--shadow-1);
+}
+
+.btn-reg {
+  border: 1px solid var(--font-any);
+  padding: 18px 12px;
+  color: var(--font-any);
+  font-family: var(--font-family);
+  font-weight: var(--fw-500);
+  font-size: 18px;
+}
+
+.btn-reg:hover {
+  box-shadow: var(--shadow-1);
+}
+
+
+@media (max-width: 1440px) {
+
+  .container { max-width: 1440px; }
+
+  h2 { font-size: 26px; }
+
+  .main__image {
+    max-width: 680px;
+    background-image: url('/assets/images/back1440.png');
+  }
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    max-width: 768px;
+    padding-inline: 24px;
+  }
+
+  .main__section {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  h2 { font-size: 20px; }
+
+  .main__block {
+    max-width: 768px;
+    padding: 24px;
+  }
+
+  .main__block--title {
+    padding-top: 24px;
+  }
+
+  .main__block--text {
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .main__block--popup {
+    max-width: 261px;
+    font-size: 15px;
+    min-height: 56px;
+    padding-inline: 16px 18px;
+  }
+
+  .main__block--popup::before {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .main__image {
+    max-width: 720px;
+    min-height: 360px;
+    background-image: url('/assets/images/back768.png');
+  }
+}
+
+@media (max-width: 375px) {
+
+  .container { 
+    max-width: 375px;
+    padding-inline: 14px 24px 14px 24px;
+  }
+
+  h2 { font-size: 17px; }
+
+  .main__section {
+    margin-top: 14px;
+  }
+
+  .main__block--title {
+    padding-top: 24px;
+    margin-bottom: 14px;
+  }
+
+  .main__block--text {
+    max-width: 279px;
+    width: 100%;
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  .main__block--popup {
+    max-width: 279px;
+    font-size: 15px;
+    min-height: 56px;
+    padding-inline: 16px 18px;
+    margin-bottom: 18px;
+  }
+  
+  .main__image {
+    max-width: 328px;
+    min-height: 220px;
+    background-image: url('/assets/images/back768.png');
+  }
+}

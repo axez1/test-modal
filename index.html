@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/main.css">
+  <script src="/main.js" defer></script>
+  <title>Test modal</title>
+</head>
+<body>
+  <section class="main">
+    <div class="container">
+      <div class="main__section">
+        <div class="main__block">
+          <h2 class="main__block--title">Демо-версия</h2>
+          <p class="main__block--text">За 18 лет деятельности было реализовано более 500 крупных, а так же, не менее 2500 средних и малых проектов. Используя знания и накопленный опыт мы можем предложить </p>
+          <button class="main__block--popup">Попробовать бесплатно</button>
+        </div>
+        <div class="main__image"></div>
+      </div>
+      <div class="main__modal--overlay">
+        <div class="main__modal">
+          <form action="" class="main__modal--form">
+            <h3 class="main__modal--title">Войти в систему</h3>
+            <input class="main__modal--input" type="text" name="login" id="login" placeholder="Email/Телефон">
+            <input class="main__modal--input" type="password" name="password" id="password" placeholder="Пароль">
+            <label class="checkbox-label" for="checkbox">
+              <input type="checkbox" name="checkbox" id="checkbox">
+              <span class="checkbox-input"></span>
+              Запомнить пароль</label>
+            
+            <a class="main__modal--link" href="#">Восстановить</a>
+            <button class="main__modal--btn btn-log">Войти</button>
+            <button class="main__modal--btn btn-reg">Зарегестрироваться</button>
+            <button type="button" class="main__modal--close">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
