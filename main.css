@@ -164,7 +164,7 @@ h3 {
   content: "";
   width: 44px;
   height: 44px;
-  background-image: url('./assets/images/arrow-up-right.svg');
+  background-image: url('assets/images/arrow-up-right.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--white);
